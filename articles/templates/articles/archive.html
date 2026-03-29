@@ -1,0 +1,95 @@
+<!-- 4 лаба -->
+<!doctype html>
+{% extends "articles/base.html" %} {% block title %}Список статей{% endblock %}
+{% block content %}
+<!-- 5 лаба -->
+<!-- <p><a href="{% url 'create_article' %}">+ Новая статья</a></p> -->
+
+<!-- 9 лаба -->
+{% load static %}
+
+<div class="header">
+    <div class="header-left">
+        <h1>Добро Пожаловать!</h1>
+       
+
+        {% if user.is_authenticated %}
+            <p>Вы вошли как: {{ user.username }}</p>
+            <a href="{% url 'create_article' %}">Новая статья</a> |
+            <a href="{% url 'logout' %}">Выйти</a>
+        {% else %}
+            <a href="{% url 'register' %}">Регистрация</a> |
+            <a href="{% url 'login' %}">Вход</a>
+        {% endif %}
+    </div>
+
+    <div class="parallax">
+        <img src="{% static 'images/parallax.jpg' %}" class="layer layer1">
+        <img src="{% static 'images/parallax.jpg' %}" class="layer layer2">
+        <img src="{% static 'images/parallax.jpg' %}" class="layer layer3">
+    </div>
+</div>
+
+<h2>Список статей</h2>
+
+{% for article in articles %}
+<div class="one-post" style="margin-bottom: 20px; position: relative; padding: 10px;">
+        <!-- 7 лаба: добавление классов -->
+         <!-- 8 лаба -->
+        
+        <div class="post-header" style="display: flex; align-items: center; gap: 10px;">
+            <h3 class="post-title" style="margin: 0;">
+                <a href="{% url 'get_article' article.id %}">
+                    {{ article.title }}
+                </a>
+            </h3>
+            <!-- 7 лаба: добавление кнопки -->
+            <button type="button" class="fold-button">Свернуть</button>
+        </div>
+
+        <div class="article-author">
+            <p><b>Автор:</b> {{ article.author.username }}</p>
+        </div>
+
+        <div class="article-text">
+            <p>{{ article.get_excerpt }}</p>
+        </div>
+
+        <div class="article-created-date">
+            <p><small>{{ article.created_date }}</small></p>
+        </div>
+
+        <!-- 8 лаба -->
+        <div class="one-post-shadow"></div>
+</div>
+{% empty %}
+<p>Статей пока нет</p>
+{% endfor %} 
+{% endblock %}
+
+<!-- 3 лаба -->
+<!-- 
+<html>
+  <head>
+    <title>Archive</title>
+  </head>
+  <body>
+    <h1>Список статей</h1>
+
+    {% for article in articles %}
+    <div style="margin-bottom: 20px"> -->
+<!-- 3 лаба -->
+<!-- <h2>{{ article.title }}</h2> -->
+<!-- 4 лаба -->
+<!-- <h2>
+        <a href="{% url 'get_article' article.id %}">{{ article.title }}</a>
+      </h2>
+      <p><b>Автор:</b> {{ article.author.username }}</p>
+      <p>{{ article.get_excerpt }}</p>
+      <p><small>{{ article.created_date }}</small></p>
+    </div>
+    {% empty %}
+    <p>Статей пока нет</p>
+    {% endfor %}
+  </body>
+</html> -->

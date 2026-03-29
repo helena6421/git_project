@@ -1,0 +1,63 @@
+<!-- 4 лаба -->
+<!doctype html>
+{% load static %}
+<html>
+  <head>
+    <title>{% block title %}Blog{% endblock %}</title>
+    <!-- 7 лаба -->
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>
+            <a href="{% url 'archive' %}" class="blog-logo">Блог любителей природы</a>
+        </h1>
+        <!-- 6 лаба -->
+        <!-- <h1><a href="{% url 'archive' %}">Мой блог</a></h1> -->
+        <!-- 8 лаба -->
+        <!-- <h1><a href="{% url 'archive' %}" class="blog-logo">Мой блог</a></h1>
+
+        <div>
+          {% if user.is_authenticated %}
+          <span>Вы вошли как: {{ user.username }}</span>
+          | <a href="{% url 'create_article' %}">Новая статья</a> |
+          <a href="{% url 'logout' %}">Выйти</a>
+          {% else %}
+          <a href="{% url 'register' %}">Регистрация</a>
+          | <a href="{% url 'login' %}">Вход</a>
+          {% endif %}
+        </div>
+
+        <hr /> -->
+      </header> 
+
+      <main>
+        {% if messages %}
+          {% for message in messages %}
+            {% if message.tags == 'success' %}
+                <p style="color: green;">{{ message }}</p>
+            {% elif message.tags == 'info' %}
+                <p style="color: blue;">{{ message }}</p>
+            {% elif message.tags == 'error' %}
+                <p style="color: red;">{{ message }}</p>
+            {% else %}
+                <p>{{ message }}</p>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+
+        {% block content %}{% endblock %}
+      </main>
+      <!-- 8 лаба -->
+      <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+      <!-- 7 лаба -->
+      <script src="{% static 'js/fold-post.js' %}"></script>
+      <!-- 8 лаба -->
+      <script src="{% static 'js/highlight-post.js' %}"></script>
+      <script src="{% static 'js/logo-effect.js' %}"></script>
+      <!-- 9 лаба -->
+      <script src="{% static 'js/parallax.js' %}"></script>
+    </div>
+  </body>
+</html>

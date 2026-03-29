@@ -1,0 +1,24 @@
+<!-- 5 лаба -->
+<!doctype html>
+{% extends "articles/base.html" %} {% block title %}Новая статья{% endblock %}
+{% block content %}
+<h2>Создать новую статью</h2>
+
+<form method="post">
+  {% csrf_token %}
+
+  <p>
+    <label>Заголовок:</label><br />
+    {{ form.title }}
+  </p>
+
+  <p>
+    <label>Текст:</label><br />
+    {{ form.text }}
+  </p>
+
+  <button type="submit">Создать</button>
+</form>
+
+<p><a href="{% url 'archive' %}">← Все статьи</a></p>
+{% endblock %}

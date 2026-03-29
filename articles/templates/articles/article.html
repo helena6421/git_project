@@ -1,0 +1,35 @@
+<!-- 4 лаба -->
+<!doctype html>
+{% extends "articles/base.html" %} {% block title %}{{ article.title
+}}{%endblock %} {% block content %}
+<p><a href="/">← Все статьи</a></p>
+
+<h2>{{ article.title }}</h2>
+
+<p><b>Автор:</b> {{ article.author.username }}</p>
+<p><b>Дата:</b> {{ article.created_date }}</p>
+
+<div>
+  <p>{{ article.text }}</p>
+</div>
+{% endblock %}
+
+<!-- 3 лаба -->
+<!--
+<html>
+  <head>
+    <title>{{ article.title }}</title>
+  </head>
+  <body>
+    <p><a href="/">Все статьи</a></p>
+
+    <h1>{{ article.title }}</h1>
+
+    <p><b>Автор:</b> {{ article.author.username }}</p>
+    <p><b>Дата:</b> {{ article.created_date }}</p>
+
+    <div>
+      <p>{{ article.text }}</p>
+    </div>
+  </body>
+</html> -->
