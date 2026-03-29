@@ -33,19 +33,11 @@
 
 ## 📸 Preview
 
-<p align="center">
-  <img src="screenshots/main.png" width="45%" />
-  <img src="screenshots/article.png" width="45%" />
-</p>
-
-<p align="center">
-  <img src="screenshots/create-article.png" width="45%" />
-  <img src="screenshots/registry.png" width="45%" />
-</p>
-
-<p align="center">
-  <img src="screenshots/login.png" width="45%" />
-</p>
+![Main](screenshots/main.png)
+![Article](screenshots/article.png)
+![Create article](screenshots/create-article.png)
+![Registry](screenshots/registry.png)
+![Login](screenshots/login.png)
 
 ---
 
