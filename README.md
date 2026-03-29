@@ -33,13 +33,19 @@
 
 ## 📸 Preview
 
-```md
-![Main](screenshots/main.png)
-![Article](screenshots/article.png)
-![Create-article](screenshots/create-article.png)
-![Registry](screenshots/registry.png)
-![login](screenshots/login.png)
-```
+<p align="center">
+  <img src="screenshots/main.png" width="45%" />
+  <img src="screenshots/article.png" width="45%" />
+</p>
+
+<p align="center">
+  <img src="screenshots/create-article.png" width="45%" />
+  <img src="screenshots/registry.png" width="45%" />
+</p>
+
+<p align="center">
+  <img src="screenshots/login.png" width="45%" />
+</p>
 
 ---
 
@@ -126,5 +132,4 @@ http://127.0.0.1:8000/
 
 ## 📌 Автор
 
-**Алёна Ласкина**
-Frontend Developer
+**Алёна Ласкина** | Frontend Developer
