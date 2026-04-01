@@ -11,6 +11,14 @@ class ArticleForm(forms.ModelForm):
         model = Article
         fields = ['title', 'text']
 
+    def clean_title(self):
+        title = self.cleaned_data['title']
+
+        if Article.objects.filter(title=title).exists():
+            raise forms.ValidationError('Статья с таким названием уже существует')
+
+        return title
+
 # 6 лаба
 class RegisterForm(forms.ModelForm):
     password = forms.CharField(label='Пароль', widget=forms.PasswordInput)
